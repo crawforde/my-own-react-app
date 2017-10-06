@@ -31,7 +31,7 @@ class Todo extends React.Component{
         <button className="submitbutton">
           X
         </button>
-        {this.props.task.completed ? <strike>{this.props.task.taskText}</strike> : this.props.task.taskText} 
+        {this.props.task.completed ? <strike>{this.props.task.taskText}</strike> : this.props.task.taskText}
       </li>
     );
   }
@@ -45,7 +45,7 @@ class TodoList extends React.Component {
   render(){
     return(
       <ul>
-        {dummyData.map( (task) => (<Todo task={task}/>) )}
+        {this.props.todos.map( (task) => (<Todo task={task}/>) )}
       </ul>
     );
   }
@@ -54,13 +54,22 @@ class TodoList extends React.Component {
 class TodoApp extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      todos: []
+    };
+  }
+
+  componentDidMount(){
+    this.setState({
+      todos: dummyData
+    })
   }
 
   render(){
     return(
       <div>
         <InputLine/>
-        <TodoList/>
+        <TodoList todos={this.state.todos}/>
       </div>
     );
   }
