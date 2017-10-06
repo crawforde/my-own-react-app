@@ -39,8 +39,13 @@ h1 {
     background: #9ec3ff;
     width: 19%;
     height: 35px;
+    color: blue;
 }
 
 .inputbox {
     height: 5%;
+}
+
+.btn-complete{
+  margin-left: 40px;
 }
