@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-ReactDom.render(<p>React lives!</p>,
+ReactDom.render(<p>Hi!</p>,
 document.getElementById('root'));
