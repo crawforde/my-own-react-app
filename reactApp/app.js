@@ -2,8 +2,23 @@ import React from 'react';
 import ReactDom from 'react-dom';
 
 
-var dummyData = ["Clean the house", "Feed the dog", "Pay bills"];
+var dummyData = [{taskText: "Clean the house", completed: false}, {taskText: "Feed the dog", completed: true}, {taskText: "Pay bills", completed: false}];
 
+
+class InputLine extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return (
+      <form>
+        <input type="text" placeholder=""></input>
+        <input type="submit"></input>
+      </form>
+    )
+  }
+}
 
 class Todo extends React.Component{
   constructor(props){
@@ -13,10 +28,10 @@ class Todo extends React.Component{
   render(){
     return(
       <li>
-        {this.props.task}
         <button className="submitbutton">
-          Complete
+          X
         </button>
+        {this.props.task.completed ? <strike>{this.props.task.taskText}</strike> : this.props.task.taskText} 
       </li>
     );
   }
@@ -36,5 +51,20 @@ class TodoList extends React.Component {
   }
 }
 
-ReactDom.render(<TodoList/>,
+class TodoApp extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return(
+      <div>
+        <InputLine/>
+        <TodoList/>
+      </div>
+    );
+  }
+}
+
+ReactDom.render(<TodoApp/>,
 document.getElementById('root'));
