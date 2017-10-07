@@ -12,7 +12,7 @@ export default class Todo extends React.Component{
         <button className="submitbutton" onClick={()=>this.props.xClick()}>
           X
         </button>
-        {this.props.task.completed ? <strike>{this.props.task.taskText}</strike> : this.props.task.taskText}
+        {this.props.task.completed ? <strike>{this.props.task.taskName}</strike> : this.props.task.taskText}
       </li>
     );
   }
