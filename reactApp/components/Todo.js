@@ -8,7 +8,7 @@ export default class Todo extends React.Component{
 
   render(){
     return(
-      <li>
+      <li onClick={()=>this.props.toggleClick()}>
         <button className="submitbutton" onClick={()=>this.props.xClick()}>
           X
         </button>
