@@ -10,7 +10,13 @@ export default class TodoList extends React.Component {
   render(){
     return(
       <ul>
-        {this.props.todos.map( (task,index) => (<Todo task={task} xClick={()=>this.props.todoXClick(index)}/>) )}
+        {this.props.todos.map((task,index) =>
+          (<Todo
+            task={task}
+            xClick={()=>this.props.todoXClick(index)}
+            toggleClick={()=>this.props.todoToggleClick(index)}
+          />)
+        )}
       </ul>
     );
   }
