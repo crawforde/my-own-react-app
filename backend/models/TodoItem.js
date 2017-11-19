@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const todoItemSchema = new mongoose.Schema({
-  task: { type: String, required: true },
+  taskName: { type: String, required: true },
   completed: { type: Boolean, default: false }
 });
 
